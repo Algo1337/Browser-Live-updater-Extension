@@ -2,8 +2,9 @@ document.addEventListener("click", async function(event) {
     if(!event.target.getAttribute("type") || event.target.getAttribute("type") !== "submit")
         return
 
-    if(event.target.getAttribute("href"))
+    if (event.target.tagName === "A" && event.target.href) {
         return;
+    }
 
     if (!event.target.parentElement) return;
     let elements = event.target.parentElement.querySelectorAll("[id]"); 
